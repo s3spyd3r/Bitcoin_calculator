@@ -1,2 +1,2 @@
-# Bitcoin_calculator
-Simple Bitcoin value calculator
+# Simple Bitcoin Value Calculator
+Calculate Bitcoin value in 28 currencies
