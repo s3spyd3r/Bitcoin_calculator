@@ -101,6 +101,8 @@ Class BitcoinCalc
         foreach ($carray as $k => $v)
             if ($k == $code)
                 return $v;
+
+        return null;
     }
 
     public function jsonCache($ctime)
