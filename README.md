@@ -12,5 +12,7 @@ This script allows you to create your very own bitcoin calculator & ticker websi
 - Configurable color scheme
 
 ## Desktop
+![Example Print1](https://raw.githubusercontent.com/s3spyd3r/Bitcoin_calculator/master/images/screencapture-desktop.png)
 
 ## Mobile
+![Example Print2](https://raw.githubusercontent.com/s3spyd3r/Bitcoin_calculator/master/images/screencapture-mobile.png)
