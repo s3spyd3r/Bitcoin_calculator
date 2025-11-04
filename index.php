@@ -1,10 +1,15 @@
 <?php
 
-$page_title = 'Calculate Bitcoin value in 28 currencies';
+$page_title = 'Calculate Cryptocurrency value in 162 currencies';
 
+// detect selected crypto via GET param 'coin'
+$selected_coin = isset($_GET['coin']) ? strtoupper($_GET['coin']) : 'BTC';
+
+// load crypto mappings and set config overrides
+require_once('includes/crypto.map.php');
 require_once('includes/site.load.php');
 
-$bvalues = $bitcoin->jsonCache($config['cache_time']);
+$bvalues = $bitcoin->jsonCache($config['cache_time'], $config['selected_coin']);
 
 $code = $config['default_currency'];
 
@@ -21,19 +26,31 @@ foreach ($bvalues as $k => $v)
 ?>
         <div class="hero" style="background-color: <?php echo $config['site_color']; ?>;">
             <div class="container">
-                <h2><?php echo $amount; ?> Bitcoin = <?php echo round($value, 2) . '&nbsp' . $code; ?></h2>
-                <p>You are currently using the calculator for <?php echo $bitcoin->code2name($code); ?></p>
+                <h2><?php echo $amount; ?> <?php echo htmlspecialchars($config['selected_coin_name']); ?> = <?php echo round($value, 2) . '&nbsp' . $code; ?></h2>
+                <p>You are currently using the calculator for <?php echo $bitcoin->code2name($code); ?> (<?php echo htmlspecialchars($config['selected_coin']); ?>)</p>
                 <div class="buttons">
                     <form class="form-inline" method="GET" action="<?php echo $config['base_url']; ?>/calculator.php">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control input-lg" id="ember-form" placeholder="Amount of btc" name="amt" value="1">
+                                <input type="text" class="form-control input-lg" id="ember-form" placeholder="Amount of crypto" name="amt" value="1">
+                            </div>
+                            <div class="input-group">
+                                <select class="form-control input-lg" id="ember-form" name="coin">
+<?php
+// Options for crypto select
+foreach($cryptos as $ck => $cm) {
+    if ($ck == $config['selected_coin'])
+        echo '<option value="' . $ck . '" selected>' . $ck . ' - ' . $cm['name'] . '</option>';
+    else
+        echo '<option value="' . $ck . '">' . $ck . ' - ' . $cm['name'] . '</option>';
+}
+?>
+                                </select>
                             </div>
                             <div class="input-group">
                                 <select class="form-control input-lg" id="ember-form" name="code">
 <?php
-
-// Options for the select box
+// Options for the fiat select box
 foreach($bvalues as $k => $v)
     if($k == $code)
         echo '<option value="' . $k . '" selected>' . $k . '</option>';
@@ -51,8 +68,8 @@ foreach($bvalues as $k => $v)
         <section id="currencies">
         <div class="container">
             <div class="feature-head mobile-hide">
-                <h2>28 Currencies Supported</h2>
-                <p>Calculate and quickly view the BTC value in 28 currencies</p>
+                <h2>162 Currencies Supported</h2>
+                <p>Calculate and quickly view the <?php echo htmlspecialchars($config['selected_coin_name']); ?> value in 162 currencies</p>
             </div>
             <div class="row">
 <?php 
@@ -64,11 +81,11 @@ if ($bitcoin->code2name($k))
 echo '<div class="col-md-4">
     <div class="ember-currency">
         <div class="icon-feature">
-            <div class="icon">
-                <div class="circle">' . $k . '</div>
+                <div class="icon">
+                <div class="circle" style="background-color: ' . $config['site_color'] . '; border: 3px solid ' . $config['site_color'] . '; color: ' . $config['site_text_color'] . ';">' . $k . '</div>
             </div>
             <h3><a href="' . $config['base_url'] . '/currency/' . $k . '">' . $bitcoin->code2name($k) . '</a></h3>
-            <p>1 BTC = ' . round($v, 2) . '&nbsp;' . $k . '</p>
+            <p>1 ' . htmlspecialchars($config['selected_coin']) . ' = ' . round($v, 2) . '&nbsp;' . $k . '</p>
         </div>
     </div>
 </div>';

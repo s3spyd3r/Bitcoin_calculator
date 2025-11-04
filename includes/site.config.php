@@ -1,15 +1,17 @@
 <?php
 
-$config['base_url'] = 'http://www.rodriguesfilipe.net/bitcoin'; // The url where the script is installed
+$config['base_url'] = '/crypto';
 
-$config['site_title'] = 'Simple Bitcoin Value Calculator'; // Your websites name/title
+$config['site_title'] = 'Simple Cryptocurrency Value Calculator';
 
-$config['site_desc'] = 'Bitcoin calculator for 28 currencies!'; // Your websites description
+$config['site_desc'] = 'Cryptocurrency calculator for 63 currencies!';
 
-$config['site_color'] = '#FF9900'; // This is the websites main color scheme
+$config['site_color'] = '#FF9900';
 
-$config['default_currency'] = 'USD'; // The default currency code for the index page
+$config['default_currency'] = 'EUR';
 
 $config['cache_time'] = '60'; // Data cache time in seconds
+
+$config['api_key'] = ''; // Fixer.io API key
 
 ?>
