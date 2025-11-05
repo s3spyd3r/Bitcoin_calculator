@@ -1,4 +1,4 @@
-# Bitcoin Calculator (multi-crypto)
+# Simple Cryptocurrency Calculator
 
 A small PHP-based calculator that shows the fiat value of a selected cryptocurrency using live prices. 
 The project supports multiple cryptocurrencies (BTC, ETH, LTC, etc.) and is responsive for mobile and tablet devices.
@@ -52,6 +52,6 @@ Note: If your environment uses a different path or URL, update `base_url` accord
 
 
 ## Screenshots
-![Desktop](https://raw.githubusercontent.com/s3spyd3r/Bitcoin_calculator/master/images/screencapture-desktop.png)
+<img src="https://raw.githubusercontent.com/s3spyd3r/Bitcoin_calculator/master/images/screencapture-desktop.png" height=400px>
 
-![Mobile](https://raw.githubusercontent.com/s3spyd3r/Bitcoin_calculator/master/images/screencapture-mobile.png)
+<img src="https://raw.githubusercontent.com/s3spyd3r/Bitcoin_calculator/master/images/screencapture-mobile.png" height=400px>
