@@ -22,13 +22,6 @@ foreach ($bvalues as $k => $v)
     if ($k == $code)
         $value = $v * $amount;
 
-// Redirect if it is a bad page
-if ($value < '1') 
-{
-    header("Location: " . $config['base_url']);
-    die();
-}
-
 ?>
         <div class="hero" style="background-color: <?php echo $config['site_color']; ?>;">
             <div class="container">

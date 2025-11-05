@@ -49,3 +49,9 @@ Note: If your environment uses a different path or URL, update `base_url` accord
 - `includes/wrapper/header.template.php` & `includes/wrapper/footer.template.php` — header/footer templates
 - `assets/css/site.css` — main custom CSS
 - `assets/img/` — coin logos and images
+
+
+## Screenshots
+![Desktop](https://raw.githubusercontent.com/s3spyd3r/Bitcoin_calculator/master/images/screencapture-desktop.png)
+
+![Mobile](https://raw.githubusercontent.com/s3spyd3r/Bitcoin_calculator/master/images/screencapture-mobile.png)

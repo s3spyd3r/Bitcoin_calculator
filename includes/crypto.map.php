@@ -7,7 +7,9 @@ $cryptos = array(
     'BTC' => array('name' => 'Bitcoin', 'color' => '#0B1F3A', 'logo' => $config['base_url'] . '/assets/img/btc.svg'),
     'ETH' => array('name' => 'Ethereum', 'color' => '#C99D66', 'logo' => $config['base_url'] . '/assets/img/eth.svg'),
     'LTC' => array('name' => 'Litecoin', 'color' => '#0F1626', 'logo' => $config['base_url'] . '/assets/img/ltc.svg'),
-    'BCH' => array('name' => 'Bitcoin Cash', 'color' => '#0b2e3d', 'logo' => $config['base_url'] . '/assets/img/bch.svg')
+    'XLM' => array('name' => 'Stellar', 'color' => '#a6a6a6', 'logo' => $config['base_url'] . '/assets/img/xlm.svg'),
+    'XRP' => array('name' => 'XRP', 'color' => '#a6a6a6', 'logo' => $config['base_url'] . '/assets/img/xrp.svg'),
+    'BCH' => array('name' => 'Bitcoin Cash', 'color' => '#0b2e3d', 'logo' => $config['base_url'] . '/assets/img/bch.svg'),
 );
 
 // default selection if not set
